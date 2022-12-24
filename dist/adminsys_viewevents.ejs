@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1051360620630523904/1051406367375761428/logo.png" type="image/x-icon">
+    <title>admin | View events</title>
+    <style>
+        h1{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        body{
+            background-color: #ddd;
+        }
+        td, th{
+            border-left: 1px solid rgb(206, 206, 206);
+            border-left: 1px solid rgb(206, 206, 206);
+            border-bottom: 1px solid rgb(138, 138, 138);
+            font-family: 'Courier New', Courier, monospace;
+            padding: 15px;
+            text-align: left;
+        }
+        th{
+            font-weight: bold;
+            background-color: rgb(208, 199, 171);
+        }
+        td:hover {
+            background-color: rgb(247, 246, 242);
+        }
+        a:link, a:visited {
+        background-color: rgb(154, 154, 154);;
+         color: white;
+         padding: 10px 20px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+        }
+        a:hover, a:active {
+        background-color: rgb(180, 172, 148);;
+        }
+    </style>
+</head>
+<body>
+    <h1>All events</h1>
+    <a href="/">Home</a>
+    <a href="/admin/link/tiget1234">Back to admin page</a>
+    <a href="/admin/addEvents/tiget1234">Insert new event</a>
+    <a href="/admin/ViewAllTicket/tiget1234">Check Ticket</a>
+    <a href="/admin/addLive/tiget1234">Add online live link</a>
+    <br><br>
+    <table>
+        <thead>
+            <th>EventKeyID</th>
+            <th>EventKeyName</th>
+            <th>EventTitle</th>
+            <th>EventDate</th>
+            <th>EventLocation</th>
+            <th>EventDesc</th>
+            <th>EventTag</th>
+            <th>EventStatus</th>
+            <th>EventPoster</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <% for (let i = 0; i < eventData.length; i++) { %>
+            <tr>
+                <td><%= eventData[i].EventKeyID %></td>
+                <td><%= eventData[i].EventKeyName %></td>
+                <td><%= eventData[i].EventTitle %></td>
+                <td><%= eventData[i].EventDate %></td>
+                <td><%= eventData[i].EventLocation %></td>
+                <td><%= eventData[i].EventDesc %></td>
+                <td><%= eventData[i].EventTag %></td>
+                <td style="color:<%=eventData[i].EventStatus == "active" ? "green" : "red"%>;"><%= eventData[i].EventStatus == "active" ? "Active" : "Inactive"%> </td>
+                <td><img width="150px" src="<%= eventData[i].EventPoster %> " alt="<%= eventData[i].EventKeyName %>Poster"></td>
+                <td>
+                    <button onclick="updateEvent('<%= eventData[i].EventKeyID %>')" style="color:#ff9100;">Update</button>
+                    <button onclick="deleteEvent('<%= eventData[i].EventKeyID %>')" style="color:red;">Delete</button>  
+                    
+                </td> 
+            </tr>
+            <% } %>
+
+        </tbody>
+    </table>
+
+    <script>
+        const deleteEvent = (eventKeyID) => {
+            if(confirm("Are you sure you want to delete this event?\n EventKeyID: " + eventKeyID + "")){
+                window.location.href = "/admin/deleteEvent/" + eventKeyID;
+            }
+        }
+        const updateEvent = (eventKeyID) => {
+            if(confirm("Are you sure you want to update this event?\n EventKeyID: " + eventKeyID + "")){
+                window.location.href = "/admin/editEvent/" + eventKeyID;
+            }
+        }
+        const setDeActive = (eventKeyID) => {
+            if(confirm("Are you sure you want to active this event?\n EventKeyID: " + eventKeyID + "")){
+                window.location.href = "/admin/setActive/" + eventKeyID;
+            }
+        }
+        const chageStatus = (eventKeyID) => {
+            if(confirm("Are you sure you want to active this event?\n EventKeyID: " + eventKeyID + "")){
+                window.location.href = "/admin/setDeActive/" + eventKeyID;
+            }
+        }
+    </script>
+</body>
+</html>

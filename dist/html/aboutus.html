@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1051360620630523904/1051406367375761428/logo.png" type="image/x-icon">
+
+  <title>About us | TIGET</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+      @layer utility {
+        .tigetbg {
+          background-image: linear-gradient(black, black),
+            url("./figmaAssets/cloud-bg.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-blend-mode: saturation;
+        }
+        .tigetbginv {
+          background-image: linear-gradient(black, black),
+            url("./figmaAssets/cloud-bg-inv.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-blend-mode: saturation;
+        }
+        .tigetbgfull {
+          background-image: linear-gradient(black, black),
+            url("./figmaAssets/cloud-bg-full.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-blend-mode: saturation;
+        }
+        /* footer {
+          background: linear-gradient(
+              180deg,
+              rgba(198, 198, 198, 0.5) 4.46%,
+              rgba(147, 147, 147, 0) 10.79%
+            ),
+            rgba(19, 19, 19, 0.52);
+          mix-blend-mode: soft-light;
+          /* opacity: 0.8;} */
+         
+      }
+    </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            dmsans: ["DM Sans", "sans-serif"],
+            roboto: ["Roboto", "sans-serif"],
+          },
+          colors: {
+            clifford: "#da373d",
+            tigetgold: "#c09e6b",
+            tigetgold2: "#c09e6b",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="tigetbgfull">
+  <!-- container -->
+  <div class="container">
+    <nav class="w-screen h-[100px] flex flex-row bg-zinc-900/75">
+      <a href="/">
+        <div class="flex flex-1 ml-16">
+          
+          <img src="./figmaAssets/logo.png" class="w-16 m-4" alt="" />
+          <button class="btn-style-none text-tigetgold text-[37px] font-bold">
+            IGET
+          </button>
+        </div>
+      </a>
+      <div class="grow">&nbsp;</div>
+      <div class="items-center mr-16">
+        <ul class="list-style-none text-left flex flex-row items-center mt-4">
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            <a href="/">Home</a>
+          </li>
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            <a href="/Events">Events</a>
+          </li>
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            <a href="/watchOnline">OnlineTicket</a>
+          </li>
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            <a href="/Ticket">Check Ticket</a>
+          </li>
+          <li class="m-4 text-[white] text-[17px] font-semibold hover:text-tigetgold hover:font-bold ">
+            <a href="/AboutUs">About Us</a>
+          </li>
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            &nbsp;
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="flex flex-row w-screen bg-black/75 ">
+      <img src="./figmaAssets/aboutus1.png" alt="">
+      <div class="h-full w-screen ">
+        <p class="text-[65px] font-semibold mx-12 mt-24  text-tigetgold ">About Us</p>
+        <p class="text-[20px] font-normal mx-32 mt-12 mb-48 text-gray-400  ">Our team wishes to create an effective ticket purchasing website with a minimal and luxury theme. We have compiled a list of small and large events and concerts so that everyone can simply find and purchase tickets for them.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="m-32 w-full justify-center items-center">
+        <p class="font-bold text-[50px] text-tigetgold pl-16">Meet the Team</p>
+        <h2 class="font-semibold text-[34px] text-tigetgold pl-16">SAMNORR</h2>
+
+        <div class="flex flex-row mt-12 ">
+          <div class="mx-16">
+            <img class="rounded-xl" src="./figmaAssets/grouppic.jpg" alt="">
+          </div>
+          <div class="mx-16 flex flex-col mt-12">
+        <p class="text-[25px] text-gray-100 pl-8 mt-6">"We are DSI department students of KMUTT. Together, we hope to leverage our expertise to create the finest website possible for everyone to use."</p>
+          <div class="ml-32 text-end mt-12">
+            <p class="text-gray-200 mt-4 text-[20px]"><span class="text-tigetgold font-bold"> Aom 402</span> - css is my life</p>
+            <p class="text-gray-200 mt-4 text-[20px]"><span class="text-tigetgold font-bold"> Jessie 413</span> - stay lazy</p>
+            <p class="text-gray-200 mt-4 text-[20px]"><span class="text-tigetgold font-bold"> Nine 444 </span> - uni is too easy</p>
+          </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-row w-screen bg-black/75 ">
+      <div class="h-full w-screen ">
+        <p class="text-[65px] font-semibold mx-12 mt-24  text-tigetgold ">Our contact</p>
+        <p class="text-[20px] font-bold mx-32 mt-12  text-gray-400  ">King Mongkut's University of Technology Thonburi
+        </p>
+        <p class="text-[20px] font-normal mx-32 text-gray-400">Address: 126 Pracha Uthit Rd, Bang Mot, Thung Khru, Bangkok 10140
+         <br> <a href="mailto:hellotiget@hotmail.com">Email: hellotiget@hotmail.com </a> |  Tel: +(66) 8 348 1406</p>
+      
+         <p>social channels:</p>
+         <div class="flex flex-row mx-32">
+           <img src="./figmaAssets/facebook.png" alt="">
+           <p class="text-gray-400 px-4 pt-2">hellotiget.official</p>
+           <img src="./figmaAssets/instagram.png" alt="">
+           <p class="text-gray-400 px-4 pt-2">hellotiget</p>
+           <img src="./figmaAssets/twitter.png" alt="">
+           <p class="text-gray-400 px-4 pt-2">hellotiget.fbofficial</p>
+   
+         </div>
+        </div>
+      <img src="./figmaAssets/aboutus2.png" alt="">
+
+      
+    </div>
+
+      
+
+    <footer class="w-screen h-[216px] bg-gradient-to-t from-black to-[#131313] flex flex-col justify-center items-center">
+      <h2 class="text-tigetgold italic font-semibold font-[30px]">SAMNORR</h2>
+      <p class="text-gray-400 ">126 Pracha Uthit Rd., Bang Mod, Thung Khru, Bangkok 10140, Thailand</p>
+      <p class="text-gray-400  underline underline-offset-2">+(66) 8 348 1406 | <a href="mailto:hellotiget@hotmail.com">hellotiget@hotmail.com</a></p>
+      <p class="text-tigetgold mt-4">&copy; 2022 Copyright : TIGET</p>
+    </footer>
+  </div>
+</body>
+
+</html>

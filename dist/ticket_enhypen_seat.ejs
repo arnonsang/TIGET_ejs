@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1051360620630523904/1051406367375761428/logo.png" type="image/x-icon">
+    <title>TIGET | Select Seat </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+      @layer utility {
+        .tigetbg {
+          background-image: linear-gradient(black, black),
+            url("./figmaAssets/cloud-bg.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-blend-mode: saturation;
+        }
+        .tigetbginv {
+          background-image: linear-gradient(black, black),
+            url("./figmaAssets/cloud-bg-inv.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-blend-mode: saturation;
+        }
+        .tigetbgfull {
+          background-image: linear-gradient(black, black),
+            url("./figmaAssets/cloud-bg-full.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-blend-mode: saturation;
+        }
+      }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        dmsans: ["DM Sans", "sans-serif"],
+                        roboto: ["Roboto", "sans-serif"],
+                    },
+                    colors: {
+                        clifford: "#da373d",
+                        tigetgold: "#c09e6b",
+                        tigetgold2: "#c09e6b",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="tigetbg">
+    <div class="container flex flex-col">
+        <nav class="w-screen h-[100px] flex flex-row bg-zinc-900/75">
+            <a href="/">
+                <div class="flex flex-1 ml-16">
+
+                    <img src="./figmaAssets/logo.png" class="w-16 m-4" alt="" />
+                    <button class="btn-style-none text-tigetgold text-[37px] font-bold">
+                        IGET
+                    </button>
+                </div>
+            </a>
+            <div class="grow">&nbsp;</div>
+            <div class="items-center mr-16">
+                <ul class="list-style-none text-left flex flex-row items-center mt-4">
+                    <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="m-4 text-[white] text-[17px] font-semibold hover:text-tigetgold hover:font-bold " >
+                        <a href="/Events">Events / ENHYPEN WORLD TOUR</a>
+                    </li>
+                    <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+                        <a href="/watchOnline">OnlineTicket</a>
+                    </li>
+                    <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+                        <a href="/Ticket">Check Ticket</a>
+                    </li>
+                    <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+                        <a href="/AboutUs">About Us</a>
+                    </li>
+                    <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+                        &nbsp;
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="flex flex-row h-[321px] w-screen bg-[url('/figmaAssets/enhyphen-bg.png')] bg-no-repeat object-none">
+            <div class="flex flex-row">
+                <div class="w-[427px]">&nbsp;</div>
+                <img class="py-12" src="./figmaAssets/enhypen_poster.png" alt="">
+            </div>
+            <div class="flex flex-col">
+                <h2 class="text-[white] text-[37px] font-bold mt-40 ml-12 drop-shadow-2xl">ENHYPEN WORLD TOUR MANIFESTO
+                    in BANGKOK</h2>
+                <div class="flex flex-row ml-12">
+                    <div class="">
+                        <p class="text-md text-tigetgold font-semibold">DATE</p>
+                        <p class="text-sm text-white font-semibold">28 JANUARY 2023</p>
+                        <p class="text-md text-tigetgold font-semibold">PLACE</p>
+                        <p class="text-sm text-white font-semibold">IMPACT ARENA, MUABG THONG THANI</p>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-md text-tigetgold font-semibold">RELEASE DATE</p>
+                        <p class="text-sm text-white font-semibold">18 DECEMBER 2022</p>
+                        <p class="text-md text-tigetgold font-semibold">PRICE</p>
+                        <p class="text-sm text-white font-semibold">6,800 (STANDING) / 6,500 / 6,300 (SEATING &
+                            STANDING) / 5,900 / 4,500 / 3,500 / 2,500 BAHT</p>
+                    </div>
+                </div>
+            </div>
+            &nbsp;
+        </div>
+
+
+
+
+
+        <div class="flex flex-row">
+
+
+
+            <% const alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]; %>
+            <% const seatChar = ["a","b","c","d","e","f","g","h","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]; %>
+
+            <div class="p-8 bg-black/75 m-16 rounded-3xl items-center justify-center">
+                <!-- <h2>Select your seat position</h2> -->
+                <div class="flex flex-row my-16 items-center justify-center text-center">
+                    <div class="grow">&nbsp;</div>
+                    <div class="flex-none bg-gray-200 w-[500px] h-[30px] text-2xl text-tigetgold mx-16">Stage</div>
+                    <div class="grow ">&nbsp;</div>
+                </div>
+
+
+                <table class="w-full">
+                    <thead>
+                        <tr>
+                            <th class=""><button class="bg-tigetgold w-16 h-8">Seat</button></th>
+                            <th class="pl-4"><button class="bg-tigetgold w-16 h-18">a</button></th>
+                            <th class="pl-4"><button class="bg-tigetgold w-16 h-18">b</button></th>
+                            <th class="pl-4"><button class="bg-tigetgold w-16 h-18">c</button></th>
+                            <th class="pl-4"><button class="bg-tigetgold w-16 h-18">d</button></th>
+                            <th class="pl-4"><button class="bg-tigetgold w-16 h-18">e</button></th>
+                            <th class="pl-4"><button class="bg-tigetgold w-16 h-18">f</button></th>
+                            <th class="pl-4"><button class="bg-tigetgold w-16 h-18">g</button></th>
+                            <th class="pl-4"><button class="bg-tigetgold w-16 h-18">h</button></th>
+                        </tr>
+                    </thead>
+                   
+                    <tbody>
+                        
+                        <% for( let i = 0; i < seatData.length; i++ ) { %>
+                        
+                        
+                        <tr >
+                            <td class="bg-tigetgold w-16 h-8 text-center "><%= seatData[i].seatNo %></td>
+                            <td class="pl-4"><button class="<%= seatData[i].a == 1 ? 'bg-green-500' : 'bg-red-500'  %> w-16 h-8 rounded-xl mt-2 mb-2"<%= seatData[i].a == 0 ? 'disabled' : '' %> onclick="seatSelect('a',<%= i+1 %>)" id="seat_a<%= i+1  %>"><%= seatData[i].a %> </button></td>
+                            <td class="pl-4"><button class="<%= seatData[i].b == 1 ? 'bg-green-500' : 'bg-red-500'  %> w-16 h-8 rounded-xl mt-2 mb-2"<%= seatData[i].b == 0 ? 'disabled' : '' %> onclick="seatSelect('b',<%= i+1 %>)" id="seat_b<%= i+1  %>"><%= seatData[i].b %> </button></td>
+                            <td class="pl-4"><button class="<%= seatData[i].c == 1 ? 'bg-green-500' : 'bg-red-500'  %> w-16 h-8 rounded-xl mt-2 mb-2"<%= seatData[i].c == 0 ? 'disabled' : '' %> onclick="seatSelect('c',<%= i+1 %>)" id="seat_c<%= i+1  %>"><%= seatData[i].c %> </button></td>
+                            <td class="pl-4"><button class="<%= seatData[i].d == 1 ? 'bg-green-500' : 'bg-red-500'  %> w-16 h-8 rounded-xl mt-2 mb-2"<%= seatData[i].d == 0 ? 'disabled' : '' %> onclick="seatSelect('d',<%= i+1 %>)" id="seat_d<%= i+1  %>"><%= seatData[i].d %> </button></td>
+                            <td class="pl-4"><button class="<%= seatData[i].e == 1 ? 'bg-green-500' : 'bg-red-500'  %> w-16 h-8 rounded-xl mt-2 mb-2"<%= seatData[i].e == 0 ? 'disabled' : '' %> onclick="seatSelect('e',<%= i+1 %>)" id="seat_e<%= i+1  %>"><%= seatData[i].e %> </button></td>
+                            <td class="pl-4"><button class="<%= seatData[i].f == 1 ? 'bg-green-500' : 'bg-red-500'  %> w-16 h-8 rounded-xl mt-2 mb-2"<%= seatData[i].f == 0 ? 'disabled' : '' %> onclick="seatSelect('f',<%= i+1 %>)" id="seat_f<%= i+1  %>"><%= seatData[i].f %> </button></td>
+                            <td class="pl-4"><button class="<%= seatData[i].g == 1 ? 'bg-green-500' : 'bg-red-500'  %> w-16 h-8 rounded-xl mt-2 mb-2"<%= seatData[i].g == 0 ? 'disabled' : '' %> onclick="seatSelect('g',<%= i+1 %>)" id="seat_g<%= i+1  %>"><%= seatData[i].g %> </button></td>
+                            <td class="pl-4"><button class="<%= seatData[i].h == 1 ? 'bg-green-500' : 'bg-red-500'  %> w-16 h-8 rounded-xl mt-2 mb-2"<%= seatData[i].h == 0 ? 'disabled' : '' %> onclick="seatSelect('h',<%= i+1 %>)" id="seat_h<%= i+1  %>"><%= seatData[i].h %> </button></td>
+                        </tr>
+                        
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="p-8 grow bg-black/75 m-16 rounded-3xl text-center items-center justify-center">
+                <p   class="text-3xl text-tigetgold mt-4">Booking Details</p>
+                <pre class="text-3xl text-tigetgold mt-4">Event Date         28 JANUARY 2023</pre>
+                <pre class="text-3xl text-tigetgold mt-4">__________________________________</pre>
+                <pre class="text-3xl text-tigetgold mt-4">Zone                           <%= Zone %> </pre>
+                <pre class="text-3xl text-tigetgold mt-4">__________________________________</pre>
+      <pre id="seat" class="text-3xl text-tigetgold mt-4">Seat                     No Select</pre>
+                <pre class="text-3xl text-tigetgold mt-4">__________________________________</pre>
+                <pre class="text-3xl text-tigetgold mt-4">Price                        <%= Price %> </pre>
+                <pre class="text-3xl text-tigetgold mt-4">__________________________________</pre>
+                <pre class="text-3xl text-tigetgold mt-4">Status                   Available</pre>
+                <pre class="text-3xl text-tigetgold mt-4">__________________________________</pre>
+
+                <form action="/ticketRequest/offline/<%= Price %>/s/ENHYPENWT" id="myForm" method="get">
+                <label class="text-3xl text-tigetgold mt-4"  for="cName">Name :</label> <input class="bg-transparent border-2 border-tigetgold ml-2 w-full p-4 text-tigetgold text-xl rounded-xl" type="text" name="cName" id="cName" required><br>
+                <label class="text-3xl text-tigetgold mt-4" for="cEmail">Email :</label><input class="bg-transparent border-2 border-tigetgold ml-2 w-full p-4 text-tigetgold text-xl rounded-xl" type="text" name="cEmail" id="cEmail" required><br>
+                <label class="text-3xl text-tigetgold mt-4" for="cPhone">Phone :</label><input class="bg-transparent border-2 border-tigetgold ml-2 w-full p-4 text-tigetgold text-xl rounded-xl" type="text" name="cPhone" id="cPhone" required><br>
+                <label class="text-3xl text-tigetgold mt-4" for="cPayment">Payment :</label>
+                <select name="cPayment" class="bg-transparent border-2 border-tigetgold ml-2 w-full p-4 text-tigetgold text-xl rounded-xl" id="">
+                    <option value="promptpay">PromptPay</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+                <input type="hidden" name="cZone" id="cZone" value="<%= Zone %>">
+                <input type="hidden" name="cSeat" id="cSeat" value="">
+                <input type="hidden" name="cPrice" id="cPrice" value="<%= Price %>">
+
+
+
+                <button type="button" onclick="getInform()" class="bg-white border boder-1 boder-solid border-tigetgold rounded-xl text-tigetgold font-bold hover:text-white hover:bg-tigetgold p-2 px-8 mt-16">Book seat</button><br>
+            </form>
+                <button onclick="window.location.href = '/Events/ENHYPENWT#zoneticket'" class="bg-gray-600 border boder-1 boder-solid border-tigetgold rounded-xl text-tigetgold font-bold hover:text-white hover:bg-tigetgold p-2 px-8 mt-16">Back to zone selection</button>
+            </div>
+
+        </div>
+        <script>
+            const  getInform = () =>{
+                let cName = document.getElementById('cName').value;
+                let cEmail = document.getElementById('cEmail').value;
+                let cPhone = document.getElementById('cPhone').value;
+                let cZone = document.getElementById('cZone').value;
+                let cSeat = document.getElementById('cSeat').value;
+                if(cName == '' || cEmail == '' || cPhone == '' || cZone == '' || cSeat == ''){
+                    alert('Please fill all information');
+                    return;
+                }
+                if(!confirm('Confirm booking?')){
+                    return;
+                }
+                document.getElementById('myForm').submit();
+
+
+            }
+        </script>
+
+
+        <!-- FOOTER -->
+        <footer
+            class="w-screen h-[216px] bg-gradient-to-t from-black to-[#131313] flex flex-col justify-center items-center">
+            <h2 class="text-tigetgold italic font-semibold font-[30px]">SAMNORR</h2>
+            <p class="text-white">126 Pracha Uthit Rd., Bang Mod, Thung Khru, Bangkok 10140, Thailand</p>
+            <p class="text-white underline underline-offset-2">+(66) 8 348 1406 | <a
+                    href="mailto:hellotiget@hotmail.com">hellotiget@hotmail.com</a></p>
+            <p class="text-tigetgold mt-4">&copy; 2022 Copyright : TIGET</p>
+        </footer>
+    </div>
+    <script>
+        let oldSeat = '';
+        const seatSelect = (seatChar, seatNum) => {
+            if (!confirm(`Seat ${seatChar}${seatNum} selected`)) return;
+            alert('Seat selected');
+            document.getElementById('seat').innerHTML = `Seat                            ${seatChar}${seatNum}`;
+            let seatBut = `seat_${seatChar}${seatNum}`;
+            if (oldSeat != '') {
+                document.getElementById(oldSeat).classList.remove('bg-yellow-500');
+                document.getElementById(oldSeat).classList.add('bg-green-500');
+            }
+            console.log(seatBut);
+            document.getElementById(seatBut).classList.remove('bg-green-500');
+            document.getElementById(seatBut).classList.add('bg-yellow-500');
+            document.getElementById('cSeat').value = `${seatChar}${seatNum}`;   
+            oldSeat = seatBut;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1051360620630523904/1051406367375761428/logo.png" type="image/x-icon">
+    <title>Admin | add events</title>
+</head>
+
+<body>
+    <form action="/admin/updateEvent" method="get" id="insertEvent">
+        <label for="EventKeyID">EventKeyID :</label><input type="text" name="EventKeyID" value="<%= eventData.EventKeyID %> " id="EventKeyID" required
+            readonly><br>
+        <label for="EventKeyName">EventKeyName :</label><input type="text" value="<%= eventData.EventKeyName.replace(" ","") %> "   name="EventKeyName" id="EventKeyName" min="3"
+            max="12" required><p>* key name is sort title with no space!!</p><br>
+        <label for="EventTitle">EventTitle :</label><input type="text" value="<%= eventData.EventTitle %> "  name="EventTitle" id="EventTitle" min="10"
+            max="255" required><br>
+        <label for="EventDesc">EventDesc :</label> <textarea name="EventDesc"  id="EventDesc" cols="30" rows="10"
+            required><%= eventData.EventDesc %> </textarea><br>
+        <label for="EventDate">EventDate :</label><input type="date" name="EventDate" value="<%= eventData.EventDate %> " id="EventDate" required><br>
+        <label for="EventType">EventType: </label><select name="EventType" id="EventType" value="<%= eventData.EventType %> "  onchange="genEventKey()"
+            required>
+            <option value="">Please Select EventType</option>
+            <option value="online"  <%= eventData.EventType == 'online' ? "selected" : "" %> >Online</option>
+            <option value="offline" <%= eventData.EventType == 'online' ? "selected" : ""  %>>Offline</option>
+        </select><br>
+        <label for="EventLocation">EventLocation :</label><input type="text" value="<%= eventData.EventLocation %> "  name="EventLocation" id="EventLocation"
+            required><br>
+            <% let rawKeyWord = eventData.EventTag;  %>
+                  <% const keyWord = rawKeyWord.split(", "); %>
+        <label for="EventTag">EventTag</label><br>
+        <input type="text" name="EventTag1" id="EventTag1" value="<%= keyWord[0].replace("#","") %> " placeholder="Enter tag without #" ><br>
+        <input type="text" name="EventTag2" id="EventTag2" value="<%= keyWord[1].replace("#","") %> " placeholder="Enter tag without #" ><br>
+        <input type="text" name="EventTag3" id="EventTag3" value="<%= keyWord[2].replace("#","") %> " placeholder="Enter tag without #" ><br>
+        <label for="EventPoster">Event Poster Link :</label><input type="url" name="EventPoster" value="<%= eventData.EventPoster %> "  id="EventPoster" placeholder="Ex https://picture.com/pic.png">
+        <p>* poster accept .jpg .jpeg .png link only!!</p>
+        <label for="EventStatus">EventStatus :</label><select name="EventStatus" id="EventStatus" required>
+            <option value="active" <%= eventData.EventStatus == 'active' ? "selected" : "" %> >Active</option>
+            <option value="deactive" <%= eventData.EventStatus == 'deactive' ? "selected" : "" %> >Inactive</option>
+        </select>
+        <button type="button" onclick="submitCheck()">Update events</button>
+    </form>
+
+
+    <script>
+        const submitCheck = () => {
+            let eventkey = document.getElementById('EventKeyID').value;
+            let eventname = document.getElementById('EventKeyName').value;
+            let eventtitle = document.getElementById('EventTitle').value;
+            let eventdesc = document.getElementById('EventDesc').value;
+            let eventdate = document.getElementById('EventDate').value;
+            let eventtype = document.getElementById('EventType').value;
+            let eventlocation = document.getElementById('EventLocation').value;
+            let eventtag1 = document.getElementById('EventTag1').value;
+            let eventtag2 = document.getElementById('EventTag2').value;
+            let eventtag3 = document.getElementById('EventTag3').value;
+            let eventposter = document.getElementById('EventPoster').value;
+            let eventstatus = document.getElementById('EventStatus').value;
+            if(eventdesc.includes("'")){
+                alert('Please do not use single quote in event description with cause error');
+                return;
+            }
+            // if (eventkey == '' || eventname == '' || eventtitle == '' || eventdesc == '' || eventdate == '' ||
+            //     eventtype == '' || eventlocation == '' || eventtag1 == '' || eventtag2 == '' || eventtag3 == '' ||
+            //     eventposter == '') {
+            //     alert('Please fill all the fields');
+            //     return;
+            // }
+            if(eventtag1.startsWith('#') || eventtag2.startsWith('#') || eventtag3.startsWith('#')){
+                alert('Please enter tag without #');
+                return;
+            }
+            if(eventtag1 == eventtag2 || eventtag1 == eventtag3 || eventtag2 == eventtag3){
+                alert('Please enter different tags');
+                return;
+            }
+            if (eventname.length < 3 || eventname.length > 12) {
+                alert('Event key name must be between 3 to 12 characters');
+                return;
+            }
+            if(eventname.includes(' ')){
+                alert('Event key name must not contain space');
+                return;
+            }
+            if (!eventkey.startsWith('S-') && !eventkey.startsWith('O-')) {
+                genEventKey();
+            }
+            if (!eventposter.startsWith('https://') && !eventposter.startsWith('http://')) {
+                alert('Please enter valid url');
+                return;
+            } else if (eventposter.startsWith('https://') || eventposter.startsWith('http://')) {
+                if (eventposter.endsWith('.jpg') || eventposter.endsWith('.png') || eventposter.endsWith('.jpeg')) {
+                    //do nothing
+                } else {
+                    alert(
+                        'Please enter picture url ex https://example.com/example.jpg or https://example.com/example.png or https://example.com/example.jpeg');
+                    return;
+                }
+            }
+
+            if (confirm(
+                    `Are you sure you want to update this event?\nThis action cannot be undone\nPlease check all the details before submitting\nIf you are sure click ok\nIf you want to edit click cancel\nEventKeyID: ${eventkey}\nEventKeyName: ${eventname}\nEventTitle: ${eventtitle}\nEventDesc: ${eventdesc}\nEventDate: ${eventdate}\nEventType: ${eventtype}\nEventLocation: ${eventlocation}\nEventTag1: ${eventtag1}\nEventTag2: ${eventtag2}\nEventTag3: ${eventtag3}\nEventPoster: ${eventposter}`
+                    )) {
+                document.getElementById('insertEvent').submit();
+
+            } else {
+                return;
+            }
+        };
+
+        const keyGen = (eventtype, keylength) => {
+            let key = '';
+            let et = 0;
+            if (eventtype == 's') {
+                key = 'S-';
+                et = 2;
+            } else if (eventtype == 'o') {
+                key = 'O-';
+                et = 2;
+            } else {
+                key = '';
+                et = 0;
+            }
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            const charactersLength = characters.length;
+            for (var i = 0; i < keylength - et; i++) {
+                key += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            return key;
+        };
+        const genEventKey = () => {
+            let eventtype = document.getElementById('EventType').value;
+            let eventlocation = document.getElementById('EventLocation');
+            if (eventtype == '') {
+                alert('Please select event type');
+                return;
+            } else if (eventtype == 'online') {
+                eventlocation.value = 'Online';
+                eventlocation.disabled = true;
+            } else if (eventtype == 'offline') {
+                eventlocation.disabled = false;
+            }
+        };
+    </script>
+</body>
+
+</html>

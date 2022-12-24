@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1051360620630523904/1051406367375761428/logo.png" type="image/x-icon">
+  <title>All Events | TIGET</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+      @layer utility {
+        .tigetbg {
+          background-image: linear-gradient(black, black),
+            url("./figmaAssets/cloud-bg.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-blend-mode: saturation;
+        }
+        .tigetbginv {
+          background-image: linear-gradient(black, black),
+            url("./figmaAssets/cloud-bg-inv.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-blend-mode: saturation;
+        }
+        .tigetbgfull {
+          background-image: linear-gradient(black, black),
+            url("./figmaAssets/cloud-bg-full.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-blend-mode: saturation;
+        }
+        footer {
+          background: linear-gradient(
+              180deg,
+              rgba(198, 198, 198, 0.5) 4.46%,
+              rgba(147, 147, 147, 0) 10.79%
+            ),
+            rgba(19, 19, 19, 0.52);
+          mix-blend-mode: soft-light;
+          /* opacity: 0.8; */
+        }
+      }
+    </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            dmsans: ["DM Sans", "sans-serif"],
+            roboto: ["Roboto", "sans-serif"],
+          },
+          colors: {
+            clifford: "#da373d",
+            tigetgold: "#c09e6b",
+            tigetgold2: "#c09e6b",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="tigetbgfull">
+  <!-- container -->
+  <div class="container">
+    <nav class="w-screen h-[100px] flex flex-row bg-zinc-900/75">
+      <a href="/">
+        <div class="flex flex-1 ml-16">
+          
+          <img src="./figmaAssets/logo.png" class="w-16 m-4" alt="" />
+          <button class="btn-style-none text-tigetgold text-[37px] font-bold">
+            IGET
+          </button>
+        </div>
+      </a>
+      <div class="grow">&nbsp;</div>
+      <div class="items-center mr-16">
+        <ul class="list-style-none text-left flex flex-row items-center mt-4">
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            <a href="/">Home</a>
+          </li>
+          <li class="m-4 text-[white] text-[17px] font-semibold hover:text-tigetgold hover:font-bold ">
+            <a href="/Events">Events</a>
+          </li>
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            <a href="/watchOnline">OnlineTicket</a>
+          </li>
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            <a href="/Ticket">Check Ticket</a>
+          </li>
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            <a href="/AboutUs">About Us</a>
+          </li>
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            &nbsp;
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <!-- content start here -->
+    <div class="pb-64 flex flex-col mt-24 w-screen justify-center items-center">
+
+      <!-- Event zone -->
+
+      <!-- start of you may like -->
+      <div class="flex flex-col ml-32 mr-32">
+        <p class="text-3xl font-semibold text-tigetgold">Search events : <%= Key %> </p>
+        <div class="flex flex-wrap">
+          <!-- events card -->
+          <% for (let i = 0; i < eventData.length; i++) { %>
+          <a href="/Events/<%= eventData[i].EventStatus == 'active' ? eventData[i].EventKeyName : '#' %>">
+            <div
+              class="w-[475px] h-[274px] <%= eventData[i].EventStatus == 'active' ? '' : 'filter grayscale' %>  flex flex-row rounded overflow-hidden shadow-lg bg-gray-600/50 rounded-lg m-6">
+              <img class="w-[255px]" src="<%= eventData[i].EventPoster %> " alt="Sunset in the mountains" />
+              <div class="px-6 py-4">
+                <div class="font-bold text-md mb-2 text-tigetgold">
+                  <p><%= eventData[i].EventTitle %> </p>
+                </div>
+                <p class="text-white text-sm pt-2 pb-2 font-normal">
+                  &nbsp; <%= eventData[i].EventDate%> 
+                </p>
+                <span class="flex flex-row pt-2 pb-2"><img src="./figmaAssets/marker.png" alt="" />
+                  <p class="text-white font-semibold"><%= eventData[i].EventLocation %> </p>
+                  <% console.log("EventLo : "+eventData[i].EventLocation) %> 
+                  <% console.log("EventDesc : "+eventData[i].EventDesc) %> 
+                </span>
+                <p class="text-[10px] text-tigetgold">
+                  <%= eventData[i].EventDesc %>
+                </p>
+                <p class="text-white mt-2 font-bold text-[15px]">
+                  <% let rawKeyWord = eventData[i].EventTag;  %>
+                  <% const keyWord = rawKeyWord.split(", "); %>
+                  <%= keyWord[0]+"" %> <%= keyWord[1]+"" %> <%= keyWord[2]+"" %> 
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <%  };  %> 
+          <!-- events card -->
+
+        </div>
+      </div>
+      <!-- end of you may like -->
+
+
+      <!-- end of content -->
+    </div>
+    <footer class="w-screen h-[216px] bg-gradient-to-t from-black to-[#131313] flex flex-col justify-center items-center">
+      <h2 class="text-tigetgold italic font-semibold font-[30px]">SAMNORR</h2>
+      <p class="text-white">126 Pracha Uthit Rd., Bang Mod, Thung Khru, Bangkok 10140, Thailand</p>
+      <p class="text-white underline underline-offset-2">+(66) 8 348 1406 | <a
+          href="mailto:hellotiget@hotmail.com">hellotiget@hotmail.com</a></p>
+      <p class="text-tigetgold mt-4">&copy; 2022 Copyright : TIGET</p>
+    </footer>
+</body>
+
+</html>

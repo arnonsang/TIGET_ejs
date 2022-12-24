@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Ticket</title>
+  <link rel="stylesheet" href="../../dist/output.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Roboto&display=swap%27');
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+      @layer base {
+    html {
+        font-family: 'DM Sans', sans-serif;
+        font-family: 'Roboto', sans-serif;
+    }
+  }
+    </style>
+</head>
+
+<body>
+  <div class="w-[1920px] h-[3202px] tracking-widest ">
+    <!--head-->
+    <div class="fixed z-40 tracking-widest">
+
+        <a href="/">
+      <!--logo-->
+      <img src="./figmaAssets/logo.png" class="w-[37px] h-[37px] absolute left-[77.86px] top-[23.86px] z-50" />
+      <button
+        class="w-[109px] h-[33.17px] absolute left-[115px] top-[26px] text-[28.27864646911621px] tracking-widest font-bold text-center text-[#c09e6b] z-50">
+        IGET
+      </button>
+    </a>
+      <!--menu-->
+      <div class="tracking-widest absolute z-50">
+        <ul>
+          <li class="w-[54px] h-[21px] absolute left-[1227px] top-8 text-[17px] text-center text-[#c09e6b]">
+            <a href="/">Home</a>
+          </li>
+          <li class="w-[62px] h-10 absolute left-[1324px] top-8 text-[17px] text-center text-white">
+            <a href="/Events">Events</a>
+          </li>
+          <li class="w-[136px] h-[30px] absolute left-[1431px] top-8 text-[17px] text-center text-[#c09e6b]">
+            <a href="/watchOnline">Online Ticket</a>
+          </li>
+          <li class="w-[136px] h-[27px] absolute left-[1592px] top-8 text-[17px] text-center text-[#c09e6b]">
+            <a href="/Ticket">Check Ticket</a>
+          </li>
+          <li class="w-[100px] h-10 absolute left-[1747px] top-8 text-[17px] text-center text-[#c09e6b]">
+            <a href="/AboutUs">About Us</a>
+          </li>
+        </ul>
+      </div>
+
+
+      <!--header box-->
+      <div class="w-[1920px] h-[82px] bg-[#000000] opacity-70"></div>
+      
+
+
+    </div>
+
+    <!--backgroud-->
+    <div class="w-[1920px] h-[715px] left-[-1px]">
+      <div class="w-[1920px] h-[715px] top-[520px] bg-[url('./figmaAssets/enhypen.png')] blur-lg brightness-50"></div>
+      <div class="w-[1920px] h-[343px] bg-[#000000] absolute top-[475.5px] opacity-70 "></div>
+    </div>
+
+    <!--main detail-->
+    <img src="./figmaAssets/enhypen_poster.png" class=" h-[584px] absolute left-[169.5px] top-[160.5px] z-30 object-cover" />
+    <!--detail-->
+    <p class="absolute left-[645px] w-[1500px] top-[402px] text-[40px] tracking-widest font-bold text-left text-white">
+      ENHYPEN WORLD TOUR MANIFESTO in BANGKOK
+    </p>
+    <div id="eventMainDetail" class="tracking-widest">
+      <div id="date">
+        <p class="w-[71px] h-[30px] absolute left-[651px] top-[501px] text-[25px] tracking-widest font-bold text-left text-[#c09e6b]">
+          DATE
+        </p>
+        <p class="w-[502px] h-[30px] absolute left-[687px] top-[546px] text-xl font-medium text-left text-white">
+          28 JANUARY 2023
+        </p>
+      </div>
+      <div id="place">
+        <p class="w-[103px] h-[30px] absolute left-[651px] top-[608px] text-[25px] font-bold text-left text-[#c09e6b]">
+          PLACES
+        </p>
+        <p class="w-[418px] h-[30px] absolute left-[687px] top-[653px] text-xl font-medium text-left text-white">
+          IMPACT ARENA, MUANG THONG THANI
+        </p>
+        <div id="gate open">
+          <p
+            class="w-[167px] h-[30px] absolute left-[651px] top-[715px] text-[25px] font-bold text-left text-[#c09e6b]">
+            GATE OPEN
+          </p>
+          <p class="w-[324px] h-[30px] absolute left-[687px] top-[760px] text-xl font-medium text-left text-white">
+            BEFORE SHOW START 1 HOURS
+          </p>
+        </div>
+      </div>
+      <div id="release date">
+        <p class="w-[201px] h-[30px] absolute left-[1223px] top-[501px] text-[25px] font-bold text-left text-[#c09e6b]">
+          RELEASE DATE
+        </p>
+        <p class="w-[211px] h-[30px] absolute left-[1254px] top-[546px] text-xl font-medium text-left text-white">
+          18 DECEMBER 2022
+        </p>
+      </div>
+      <div id="price">
+        <p class="w-[103px] h-[30px] absolute left-[1223px] top-[602px] text-[25px] font-bold text-left text-[#c09e6b]">
+          PRICE
+        </p>
+        <p class="w-[608px] h-[62px] absolute left-[1254px] top-[647px] text-xl font-medium text-left text-white">
+          6,800 (STANDING) / 6,500 / 6,300 (SEATING &#x26; STANDING) / 5,900 / 4,500 / 3,500 / 2,500
+          BAHT
+        </p>
+      </div>
+      <div id="status">
+        <p class="w-[167px] h-[30px] absolute left-[1223px] top-[728px] text-[25px] font-bold text-left text-[#c09e6b]">
+          STATUS
+        </p>
+        <p class="w-[211px] h-[30px] absolute left-[1254px] top-[768px] text-xl font-medium text-left text-[#ca0000]">
+          NOT RELEASE NOW
+        </p>
+      </div>
+    </div>
+    <div id="eventDetail">
+      <!--topic-->
+      <p class="w-[136px] h-[52px] absolute left-[170px] top-[877px] text-[40px] font-bold text-left text-[#c09e6b]">
+        Detail
+      </p>
+      <!--info-->
+      <div class="w-[1411px] h-[515px] absolute left-[254px] top-[968px] text-[25px] font-medium text-left text-white">
+        <p>
+          Show dates : Saturday, January 28th, 2023 <br>
+          Show times :6 PM on Saturday and 5 PM on Sunday <br>
+          Place : Impact Arena, Muang Thong ThaniTicket <br>
+          Prices : 6,800 (STANDING) / 6,500 / 6,300 (STANDING) / 6,300 / 5,900 / 4,500 / 3,500 and 2,500 THB <br>
+          Every seat can receive plastic tickets.*Only paper tickets can be used to access the concert place*
+          <br> <br>
+          ***For presale tickets on December 18th, 2022, please register for waiting in the queue on the website
+          available from 9 AM and ticket sales will be open from 10 AM onwards.
+        </p>
+      </div>
+      <!--topic-->
+      <div class="w-[573px] h-[52px] absolute left-[164px] top-[1298px] text-[40px] font-bold text-left text-[#c09e6b]">
+        Conditions for purchasing
+      </div>
+      <!--condition-->
+      <div class="w-[1411px] h-[515px] absolute left-[238px] top-[1389px] text-[25px] font-medium text-left text-white">
+        1. Limit 1 ticket per time. <br>
+        2. Pre-sale tickets are limited and on a first-come-first-serve basis. <br>
+        3. Full name of the ticket owner must be specified when purchasing tickets and the name will be printed on the
+        ticket. Please make sure that the information is provided correctly before making the payment. <br>
+        4. Online ticketing can be paid with Paypal and QR code Promptpay. <br>
+        5. Convenience fee 3% will be applied when making the payment with a credit card, debit card, or True Wallet .
+        0.5% convenience fee will be applied for payment via Paypal and QR code Promptpay. <br>
+        6. Paper tickets are eligible to enter the concert. Plastic tickets can be received at the concert venue.<br>
+        7. Please beware of fraudsters that come in various kinds such as claiming as ticket bookers, providing
+        ticketing codes, illegally buying and selling tickets, claiming themselves as TIGET employees, etc.<br>
+        8. The use of tickets to resell or giveaway for advertising or public relations purposes without any consent
+        from the company will be considered an illegal act. <br>
+        9. Reselling tickets at higher prices, the company reserves the right to cancel the reservation in the event of
+        unpaid payment or cancel the tickets if payment has been made. The tickets will be back in the system for
+        selling again.
+      </div>
+    </div>
+
+    <!--zone-->
+    <div id="zoneticket" class="w-[414px] h-[52px] absolute left-[164px] top-[1955px] text-[40px] font-bold text-left text-[#c09e6b]">
+      <p>Zone ticket</p>
+    </div>
+    <!--picture-->
+    <div class="w-[921px] h-[768px] absolute left-[237.5px] top-[2106.5px] object-none">
+      <img src="./figmaAssets/zone.png" />
+    </div>
+    <!--select zone-->
+    <div class="w-[254px] h-[52px] absolute left-[1239px] top-[2067px] text-[40px] font-bold text-left text-[#c09e6b]">
+      <p>Select zone</p>
+    </div>
+    <div class="absolute left-[1306.5px] top-[2166.5px] w-[393px] h-[50px] ">
+        <form action="/seat" id="eventForm" method="get">
+      <select id="eventZone" name="eventZone"
+        class=" block w-full px-4 py-3 text-base bg-white/30 text-[#C09E6B] border border-[#C09E6B] rounded-full w-full p-2.5">
+        <option selected>Select zone what you want</option>
+        <option value="BR">BR | Standing </option>
+        <option value="BL">BL | Standing </option>
+        <option value="SC">SC | Seating </option>
+        <option value="SM">SM | Seating </option>
+        <option value="SE">SE | Seating </option>
+        <option value="SK">SK | Seating </option>
+
+      </select>
+    </div>
+    <div class="absolute left-[1306.5px] top-[2236.5px] w-[127px] h-[39px]">
+      <button type="button" onclick="checkSubmit()"
+        class=" shadow bg-white hover:bg-[#f0c769] text-[15px] font-bold text-center text-[#c09e6b] focus:shadow-outline focus:outline-none  py-2 px-4 border border-[#C09E6B] rounded-full">
+        Select zone
+      </button>
+    </div>
+</form>
+    <div class="w-[145px] h-[52px] absolute left-[1239px] top-[2339px] text-3xl font-bold text-left text-[#c09e6b]">
+      <p>Remarks</p>
+    </div>
+    <div class="w-[505px] h-[199px] absolute left-[1239px] top-[2415px] text-[25px] font-medium text-left text-white">
+      <p>1. Limit 1 ticket per order. </p>
+      <p>2. Unlimited number of per account. </p>
+      <p>3. When the purchase is successful, you have to get in a new queue.</p>
+      <p>4. You have 15 minutes to to complete the transaction.</p>
+    </div>
+
+    <!--footer-->
+    <footer
+      class="absolute w-[1920px] h-[216px] absolute left-[-0.5px] top-[2985.5px] opacity-80 bg-gradient-to-t from-black to-[#131313] flex flex-col justify-center items-center">
+      <h2 class="w-[110px] text-left text-[#c09e6b] italic font-semibold font-[30px]">
+        SAMNORR
+      </h2>
+      <p class="text-gray-400 ">
+        126 Pracha Uthit Rd., Bang Mod, Thung Khru, Bangkok 10140, Thailand
+      </p>
+      <p class="text-gray-400  underline underline-offset-2">
+        +(66) 8 348 1406
+        | <a href="mailto:hellotiget@hotmail.com">hellotiget@hotmail.com</a>
+      </p>
+      <p class="text-left text-[#c09e6b] mt-4">
+        &copy; 2022 Copyright : TIGET
+      </p>
+    </footer>
+
+    <!--background page-->
+    <div class="w-[1920px] h-[2485px] bg-[#030303]"></div>
+  </div>
+  <script>
+    const checkSubmit = () => {
+      const eventZone = document.getElementById('eventZone').value;
+      if (eventZone === 'Select zone what you want') {
+        alert('Please select zone');
+        return ;
+      }
+        document.getElementById('eventForm').submit();
+    }
+  </script>
+</body>
+
+</html>

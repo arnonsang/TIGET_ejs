@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Live Link</title>
+</head>
+<body>
+    <form action="/admin/addlivelink/tiget1234" method="get">
+        <input type="text" name="eventCode" placeholder="Event EventKeyName Here!">
+        <input type="text" name="eventLink" onchange="checklink()" placeholder="Event Live Link Here">
+        <input type="submit" value="Add link" id="sbutt" disabled>
+    </form>
+    <script>
+        const checklink = () => {
+            if (document.querySelector('input[name="eventLink"]').value.includes("https://" || "http://")) {
+                console.log("Link is valid");
+                document.querySelector("#sbutt").disabled = false;
+            } else {
+                alert("Link must be start with https:// or http:// ,Please enter valid link");
+                document.querySelector("#sbutt").disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket | admin</title>
+</head>
+<body>
+    <h1>Ticket List</h1>
+    <button onclick="history.back()">Back</button>
+    <table border="1">
+        <thead>
+            <th>ticketCode</th>
+            <th>ticketPrice</th>
+            <th>BuyerName</th>
+            <th>BuyerEmail</th>
+            <th>BuyerPhone</th>
+            <th>BuyerPayment</th>
+            <th>BuyerPaymentStatus</th>
+            <th>EventCode</th>
+            <th>EventType</th>
+            <th>ticketZone</th>
+            <th>ticketSeat</th>
+            <th>action</th>
+
+        </thead>
+        <tbody>
+            <% for (let i = 0; i < ticket.length; i++) { %>
+                <tr>
+                    <td><%= ticket[i].ticketCode %></td>
+                    <td><%= ticket[i].ticketPrice %></td>
+                    <td><%= ticket[i].BuyerName %></td>
+                    <td><%= ticket[i].BuyerEmail %></td>
+                    <td><%= ticket[i].BuyerPhone %></td>
+                    <td><%= ticket[i].BuyerPayment %></td>
+                    <td><%= ticket[i].BuyerPaymentStatus %></td>
+                    <td><%= ticket[i].EventCode %></td>
+                    <td><%= ticket[i].EventType %></td>
+                    <td><%= ticket[i].ticketZone %></td>
+                    <td><%= ticket[i].ticketSeat %></td>
+                    <td>
+                        <button onclick="approvePayment('<%= ticket[i].ticketCode %>')" style="color:green;">Approve</button>
+                    <button onclick="deleteTicket('<%= ticket[i].ticketCode %>')" style="color:red;">Delete</button> 
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+
+    <script>
+        const approvePayment = (ticketCode) => {
+            if(confirm("Are you sure you want to approve this ticket payment?\n TicketCode: " + ticketCode + "")){
+                window.location.href = "/admin/approvePayment/" + ticketCode;
+            }
+        }
+        const deleteTicket = (ticketCode) => {
+            if(confirm("Are you sure you want to delete this ticket?\n TicketCode: " + ticketCode + "")){
+                window.location.href = "/admin/deleteTicket/" + ticketCode;
+            }
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+    ticketCode: 'S-x1wBjU',
+    ticketPrice: 6500,
+    BuyerName: 'ืnongaomlnwza',
+    BuyerEmail: 'aomlnwza007@gmail.com',
+    BuyerPhone: '0955551547',
+    BuyerPayment: 'promptpay',
+    BuyerPaymentStatus: 'pending',
+    BuyerPaymentDate: null,
+    EventCode: 'ENHYPENWT',
+    EventType: 's',
+    ticketZone: 'SM',
+    ticketSeat: 'd1' } 
+ -->

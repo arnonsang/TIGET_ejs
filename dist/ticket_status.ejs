@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon"
+    href="https://cdn.discordapp.com/attachments/1051360620630523904/1051406367375761428/logo.png" type="image/x-icon">
+  <title><%= status %> | <%= ticketData.ticketCode %> </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+      @layer utility {
+        .tigetbg {
+          background-image: linear-gradient(black, black),
+            url("./figmaAssets/cloud-bg.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-blend-mode: saturation;
+        }
+        .tigetbginv {
+          background-image: linear-gradient(black, black),
+            url("./figmaAssets/cloud-bg-inv.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-blend-mode: saturation;
+        }
+        .tigetbgfull {
+          background-image: linear-gradient(black, black),
+            url("./figmaAssets/cloud-bg-full.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-blend-mode: saturation;
+        }
+      }
+    </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            dmsans: ["DM Sans", "sans-serif"],
+            roboto: ["Roboto", "sans-serif"],
+          },
+          colors: {
+            clifford: "#da373d",
+            tigetgold: "#c09e6b",
+            tigetgold2: "#c09e6b",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="tigetbgfull">
+  <div class="container flex flex-col">
+    <nav class="w-screen h-[100px] flex flex-row bg-zinc-900/75">
+      <a href="/">
+        <div class="flex flex-1 ml-16">
+
+          <img src="./figmaAssets/logo.png" class="w-16 m-4" alt="" />
+          <button class="btn-style-none text-tigetgold text-[37px] font-bold">
+            IGET
+          </button>
+        </div>
+      </a>
+      <div class="grow">&nbsp;</div>
+      <div class="items-center mr-16">
+        <ul class="list-style-none text-left flex flex-row items-center mt-4">
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            <a href="/">Home</a>
+          </li>
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            <a href="/Events">Events</a>
+          </li>
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            <a href="/watchOnline">OnlineTicket</a>
+          </li>
+          <li class="m-4 text-[white] text-[17px] font-semibold hover:text-tigetgold hover:font-bold ">
+            <a href="/Ticket">Check Ticket</a>
+          </li>
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            <a href="/AboutUs">About Us</a>
+          </li>
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            &nbsp;
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="flex flex-row mt-32 ml-32 mr-32 mb-8 w-full grow items-between">
+      <h2 class="text-6xl text-tigetgold font-bold flex-1">Ticket Details</h2>
+      <div class="grow"></div>
+      <div class="text-end flex-1">
+        <p class="text-white text-xl font-normal"><span class="text-tigetgold font-bold"> Ticket code :</span>
+          <%= ticketData.ticketCode %> </p>
+        <p class="text-white text-xl font-normal"><span class="text-tigetgold font-bold"> Event Type :</span>
+          <%= ticketData.EventType == 'o' ? 'Online Event' : 'Offline Event' %> </p>
+        <p class="text-white text-xl font-normal"><span class="text-tigetgold font-bold"> Event :</span>
+          <%= ticketData.EventCode %> </p>
+      </div>
+
+    </div>
+
+    <div class="w-full  bg-black/75 p-4 justify-center items-center text-center mt-4 mr-32 ml-32 mb-8 rounded-3xl">
+      <div class="flex flex-row">
+        <div class="grow p-8 text-center">
+          <p class="text-2xl text-gray-300">Price : <%= ticketData.ticketPrice %> </p>
+          <p class="text-2xl text-gray-300">Zone : <%= ticketData.ticketZone == null ? 'Online' : ticketData.ticketZone%></p>
+          <p class="text-2xl text-gray-300">Seat : <%= ticketData.ticketSeat == null ? 'Online' : ticketData.ticketSeat%></p>
+          <p class="text-2xl text-gray-300">Payment Status : <%= ticketData.BuyerPaymentStatus %></p>
+        </div>
+        <div class="border-2 w-[0px] h-[150px] mt-16 flex-none"></div>
+        <div class="grow pt-8 text-center">
+          <p class="text-2xl text-gray-300">Name : <%= ticketData.BuyerName %> </p>
+          <p class="text-2xl text-gray-300">Email : <%= ticketData.BuyerEmail %></p>
+          <p class="text-2xl text-gray-300">Phone : <%= ticketData.BuyerPhone %></p>
+
+        </div>
+      </div>
+      <p class="text-gray-300 font-bold text-4xl mt-16 mb-12">
+        <%= ticketData.BuyerPaymentStatus == 'pending' ? 'Please complete your payment  in your email to activate your ticket!' : 'Your ticket is ready!' %>
+      </p>
+      <p class="text-tigetgold font-bold text-4xl mb-12">If you have any question Please contact us or read information in your e-mail, Thanks.</p>
+    </div>
+
+
+    <footer
+      class="w-screen h-[216px] bg-gradient-to-t from-black to-[#131313] flex flex-col justify-center items-center">
+      <h2 class="text-tigetgold italic font-semibold font-[30px]">SAMNORR</h2>
+      <p class="text-white">126 Pracha Uthit Rd., Bang Mod, Thung Khru, Bangkok 10140, Thailand</p>
+      <p class="text-white underline underline-offset-2">+(66) 8 348 1406 | <a
+          href="mailto:hellotiget@hotmail.com">hellotiget@hotmail.com</a></p>
+      <p class="text-tigetgold mt-4">&copy; 2022 Copyright : TIGET</p>
+    </footer>
+  </div>
+</body>
+
+</html>

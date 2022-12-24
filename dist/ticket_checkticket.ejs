@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1051360620630523904/1051406367375761428/logo.png" type="image/x-icon">
+  <title>Check Ticket | TIGET</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+      @layer utility {
+        .tigetbg {
+          background-image: linear-gradient(black, black),
+            url("./figmaAssets/cloud-bg.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-blend-mode: saturation;
+        }
+        .tigetbginv {
+          background-image: linear-gradient(black, black),
+            url("./figmaAssets/cloud-bg-inv.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-blend-mode: saturation;
+        }
+        .tigetbgfull {
+          background-image: linear-gradient(black, black),
+            url("./figmaAssets/cloud-bg-full.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-blend-mode: saturation;
+        }
+      }
+    </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            dmsans: ["DM Sans", "sans-serif"],
+            roboto: ["Roboto", "sans-serif"],
+          },
+          colors: {
+            clifford: "#da373d",
+            tigetgold: "#c09e6b",
+            tigetgold2: "#c09e6b",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="tigetbgfull">
+  <!-- container -->
+  <div class="container">
+    <nav class="w-screen h-[100px] flex flex-row bg-zinc-900/75">
+      <a href="/">
+        <div class="flex flex-1 ml-16">
+          
+          <img src="./figmaAssets/logo.png" class="w-16 m-4" alt="" />
+          <button class="btn-style-none text-tigetgold text-[37px] font-bold">
+            IGET
+          </button>
+        </div>
+      </a>
+      <div class="grow">&nbsp;</div>
+      <div class="items-center mr-16">
+        <ul class="list-style-none text-left flex flex-row items-center mt-4">
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            <a href="/">Home</a>
+          </li>
+          <li  class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            <a href="/Events">Events</a>
+          </li>
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            <a href="/watchOnline">OnlineTicket</a>
+          </li>
+          <li class="m-4 text-[white] text-[17px] font-semibold hover:text-tigetgold hover:font-bold ">
+            <a href="/Ticket">Check Ticket</a>
+          </li>
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            <a href="/AboutUs">About Us</a>
+          </li>
+          <li class="m-4 text-tigetgold text-[17px] font-normal hover:text-[white] hover:font-semibold">
+            &nbsp;
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <form action="/Ticket/checkTicket" method="get">
+    <div class="w-screen flex flex-col justify-center items-center">
+        <img src="./figmaAssets/logo.png" class="w-32 mt-16" alt="">
+        <p class="text-tigetgold text-[38px] mt-8 font-semibold">Event Details</p>
+        <p class="text-white text-[60px] mt-6 font-bold">Check ticket status</p>
+        <input class="mt-8 w-[550px] h-[50px] p-8 text-tigetgold text-2xl bg-transparent border border-solid border-[5px] border-tigetgold rounded-full placeholder-tigetgold" type="text" name="ticketCode" id="" placeholder="Enter your ticket code here!">
+        <button class="h-[50px] w-[170px] bg-tigetgold mt-12 text-white text-xl text-bold rounded-full mb-12" type="submit">Check ticket!</button>
+    </div>
+  </form>
+    
+
+
+
+      <!-- end of content -->
+
+      <footer class="w-screen h-[216px] bg-gradient-to-t from-black to-[#131313] flex flex-col justify-center items-center">
+        <h2 class="text-tigetgold italic font-semibold font-[30px]">SAMNORR</h2>
+        <p class="text-white">126 Pracha Uthit Rd., Bang Mod, Thung Khru, Bangkok 10140, Thailand</p>
+        <p class="text-white underline underline-offset-2">+(66) 8 348 1406 | <a
+            href="mailto:hellotiget@hotmail.com">hellotiget@hotmail.com</a></p>
+        <p class="text-tigetgold mt-4">&copy; 2022 Copyright : TIGET</p>
+      </footer>
+    </div>
+</body>
+
+</html>
