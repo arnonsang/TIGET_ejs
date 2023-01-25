@@ -30,11 +30,10 @@ const mailer = (customerEmail, subject, html, price) => {
   const transporter = nodemailer.createTransport({
     service: 'hotmail',
     auth: {
-      user: "hellotiget@hotmail.com",
-      pass: "tigetmail1234",
+      user: "",
+      pass: "",
     },
   });
-//tigetmail1234
   let mailOptions = {
     from: "hellotiget@hotmail.com", // sender
     to: customerEmail, // list of receivers
